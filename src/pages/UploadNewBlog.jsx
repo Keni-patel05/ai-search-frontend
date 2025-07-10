@@ -138,7 +138,7 @@ const UploadNewBlog = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/api/ai-content', {
+      const response = await fetch('${import.meta.env.VITE_API_BASE_URL}/ai-content', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

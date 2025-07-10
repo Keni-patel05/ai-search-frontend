@@ -231,7 +231,7 @@ const BlogDetails = () => {
         setError(null);
         
         // Check if the server is running
-        const response = await fetch(`http://localhost:3000/api/ai-content/${id}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/ai-content/${id}`, {
           headers: {
             'Content-Type': 'application/json',
           },

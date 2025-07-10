@@ -1,12 +1,8 @@
 import axios from 'axios';
 
-const baseURL = import.meta.env.PROD 
-  ? 'http://bananasit.com/aisearch/api'
-  : 'http://localhost:5000/api';
+const baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
 
-const api = axios.create({
-  baseURL,
-});
+const api = axios.create({ baseURL });
 
 export const signup = async (data) => {
   try {
@@ -14,5 +10,6 @@ export const signup = async (data) => {
     return response.data;
   } catch (error) {
     console.error(error);
+    throw error;
   }
 };
